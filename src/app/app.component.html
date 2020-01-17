@@ -13,17 +13,18 @@
 
     <div>
       <h3>Lista zadań:</h3>
+      <div *ngIf="tasksList.length == 0">Nie masz zadnych zadań</div>
       <ul>
         <li *ngFor='let task of tasksList'>
           {{task}}
           <button (click)="remove(task)">Usuń</button>
-          <button (click)="done(task)">Zrobsione</button>
+          <button (click)="done(task)">Zrobione</button>
         </li>
       </ul>
     </div>
 
     <div>
-      <h3>Zadania wykonane</h3>
+    <h3>Zadania wykonane: {{doneTasksList.length}}</h3>
       <ul>
         <li *ngFor='let doneTask of doneTasksList'>
           {{doneTask}}
